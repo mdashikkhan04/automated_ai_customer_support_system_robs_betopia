@@ -11,7 +11,8 @@ settings = get_settings()
 
 class ChatwootService:
     def __init__(self):
-        self.base_url = settings.CHATWOOT_BASE_URL.rstrip("/")
+        # Convert AnyHttpUrl (Pydantic) to plain string before using string methods
+        self.base_url = str(settings.CHATWOOT_BASE_URL).rstrip("/")
         self.api_token = settings.CHATWOOT_API_TOKEN
 
     def _headers(self) -> dict:

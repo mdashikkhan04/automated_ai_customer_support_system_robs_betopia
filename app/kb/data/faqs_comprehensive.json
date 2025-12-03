@@ -1,0 +1,133 @@
+[
+  {
+    "id": "faq_refund_policy",
+    "type": "policy",
+    "title": "💰 Refund Policy - 60-Day Money-Back Guarantee",
+    "question": "What is your refund policy? Can I get a refund?",
+    "content": "We offer a hassle-free 60-day money-back guarantee on all HardChews purchases. If you're not completely satisfied for any reason, contact our support team within 60 days of purchase with your order number and email. We'll process your refund within 3-5 business days. Return shipping label will be provided. No questions asked – your satisfaction is our priority.",
+    "answer": "We offer a hassle-free 60-day money-back guarantee on all HardChews purchases. If you're not completely satisfied for any reason, contact our support team within 60 days of purchase with your order number and email. We'll process your refund within 3-5 business days. Return shipping label will be provided. No questions asked – your satisfaction is our priority.",
+    "tags": ["refund", "money-back", "guarantee", "returns", "policy"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_how_to_refund",
+    "type": "policy",
+    "title": "How to Request a Refund",
+    "question": "How do I request a refund? What's the process?",
+    "answer": "To request a refund: (1) Email support@hardchews.shop with your order number, email, and reason for refund, (2) We'll send you a return shipping label, (3) Ship the product back to us, (4) Once received and inspected, we'll process your refund within 3-5 business days. Refunds go back to your original payment method. You can also reply directly in this chat and we'll guide you through the process.",
+    "tags": ["refund", "process", "return", "how to"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_shipping_time",
+    "type": "policy",
+    "title": "Shipping Time & Delivery",
+    "question": "How long does shipping take? When will I receive my order?",
+    "answer": "Shipping timeframes: USA: 2-5 business days (most orders), Canada: 5-10 business days, International: 7-15 business days depending on location. Orders are typically processed within 24 hours during business days. You'll receive a tracking number via email once your order ships. Free shipping on orders over $50 (USA only). For faster delivery, express shipping is available at checkout.",
+    "tags": ["shipping", "delivery", "timeline", "tracking"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_tracking_order",
+    "type": "policy",
+    "title": "How to Track My Order",
+    "question": "How can I track my order? Where is my package?",
+    "answer": "Once your order ships, you'll receive an email with a tracking number and carrier information (USPS/UPS/FedEx). Click the tracking link to see real-time updates. You can also check your account on hardchews.shop → My Orders section. Enter your order number and email. If you don't see a tracking number within 24 hours of ordering, contact support@hardchews.shop. Most orders arrive within the estimated timeframe.",
+    "tags": ["tracking", "order status", "delivery", "package"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_lost_package",
+    "type": "policy",
+    "title": "What if My Package is Lost?",
+    "question": "What if I don't receive my order or the package is lost?",
+    "answer": "If your package doesn't arrive within the estimated delivery window: (1) First check tracking – it may still be in transit, (2) Allow 2-3 extra days, (3) Check with neighbors/building management, (4) Contact support@hardchews.shop with tracking number. We'll investigate with the carrier. If confirmed lost, we'll either reship your order or issue a full refund at your choice. You have 30 days to report a lost package.",
+    "tags": ["lost", "missing", "delivery", "issue"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_subscription",
+    "type": "policy",
+    "title": "Subscription & Auto-Replenishment",
+    "question": "Do you offer subscriptions? Can I set up recurring orders?",
+    "answer": "Yes! Join our Subscribe & Save program: (1) Select subscription at checkout (every month, every 2 months, or every 3 months), (2) Get 15% off each shipment, (3) Manage or cancel anytime – no penalties, (4) Never run out of stock, (5) Pause for up to 3 months if needed. To manage subscription: hardchews.shop → My Account → Subscriptions or email support@hardchews.shop.",
+    "tags": ["subscription", "recurring", "auto-replenish", "discount"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_payment_methods",
+    "type": "policy",
+    "title": "What Payment Methods Do You Accept?",
+    "question": "What payment options are available? Do you accept [PayPal/Apple Pay/etc]?",
+    "answer": "We accept all major payment methods: Credit/Debit Cards (Visa, Mastercard, American Express), PayPal, Apple Pay, Google Pay, and Klarna (installment plans available). All payments are processed securely with SSL encryption. If your preferred payment method isn't listed, contact support@hardchews.shop – we may be able to arrange alternatives. For international orders, most credit cards and PayPal are accepted.",
+    "tags": ["payment", "methods", "accepted", "checkout"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_billing_frequency",
+    "type": "policy",
+    "title": "Subscription Billing & Pricing",
+    "question": "How much does a subscription cost? When will I be charged?",
+    "answer": "Subscribe & Save pricing: Single order $29.99 (30 tablets), Subscription 15% off = $25.49 per shipment. Billing occurs on your selected frequency (monthly/bi-monthly/quarterly). You'll receive an email reminder 3 days before each charge. First shipment goes out within 24 hours of order. You can change quantity, frequency, or cancel anytime from your account – no hidden fees.",
+    "tags": ["subscription", "pricing", "billing", "cost"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_bulk_orders",
+    "type": "policy",
+    "title": "Bulk Orders & Wholesale",
+    "question": "Do you offer bulk discounts or wholesale pricing?",
+    "answer": "Yes! For bulk orders (10+ units): (1) Contact wholesale@hardchews.shop with quantity and use case, (2) Request a custom quote, (3) We offer tiered discounts starting at 20% off for 10+ packs, (4) Special pricing for businesses, resellers, and organizations. Lead time for bulk orders: 5-10 business days. Minimum bulk order: 10 units.",
+    "tags": ["bulk", "wholesale", "discount", "business"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_international_shipping",
+    "type": "policy",
+    "title": "International Orders & Shipping",
+    "question": "Do you ship internationally? What about customs/duties?",
+    "answer": "Yes, we ship to 150+ countries worldwide! Shipping cost depends on destination (usually $15-35). Delivery time: 7-21 business days. Important: Customers are responsible for any customs duties or import taxes in their country. We'll provide all necessary customs documentation. For restricted countries (North Korea, Iran, Syria, etc.), we cannot ship. Check hardchews.shop/shipping for your country's details or email support@hardchews.shop.",
+    "tags": ["international", "worldwide", "customs", "duties"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_contact_support",
+    "type": "policy",
+    "title": "How to Contact Customer Support",
+    "question": "How can I reach your customer support team?",
+    "answer": "Multiple ways to reach us: (1) Email: support@hardchews.shop (response within 12-24 hours), (2) Live chat: Visit hardchews.shop during business hours (Mon-Fri, 9am-6pm EST), (3) Phone: +1-800-HARDCHEWS (1-800-427-3424), (4) Contact form: hardchews.shop/contact. For urgent issues, call is fastest. We're committed to resolving your concern quickly and professionally.",
+    "tags": ["contact", "support", "help", "customer service"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_account_security",
+    "type": "policy",
+    "title": "Account Security & Privacy",
+    "question": "Is my personal information safe? How do you protect my data?",
+    "answer": "Your security is our priority: (1) All data encrypted with SSL/TLS (bank-level), (2) PCI-DSS compliant payment processing, (3) We never share your info with third parties, (4) 2-Factor Authentication available on your account, (5) GDPR & privacy law compliant. Review our full privacy policy at hardchews.shop/privacy. If you have concerns or notice suspicious activity, contact security@hardchews.shop immediately.",
+    "tags": ["security", "privacy", "data", "protection"],
+    "source": "client_file",
+    "url": null
+  },
+  {
+    "id": "faq_coupon_promo",
+    "type": "policy",
+    "title": "Coupons & Promotional Codes",
+    "question": "Do you have discount codes or current promotions?",
+    "answer": "We run regular promotions! Check our channels: (1) Subscribe to newsletter at hardchews.shop/newsletter (get 10% off first order), (2) Follow social media for flash sales (@HardChewsOfficial), (3) Check email for exclusive subscriber offers, (4) Loyalty rewards – every purchase earns points (redeemable for discounts), (5) Current promotion: Free shipping on orders over $50! Enter codes at checkout. Not stackable with Subscribe & Save discount.",
+    "tags": ["coupon", "discount", "promo", "code", "offer"],
+    "source": "client_file",
+    "url": null
+  }
+]

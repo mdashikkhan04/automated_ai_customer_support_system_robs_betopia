@@ -8,6 +8,8 @@ from app.services.kb_service import kb_service
 from app.services.openai_service import generate_reply
 from app.services.shopify_service import shopify_service
 from app.services.clickbank_service import clickbank_service
+from app.services.conversation_manager import get_conversation_manager
+from app.services.hybrid_response_service import hybrid_service
 from app.logger import logger
 
 ORDER_KEYWORDS = ["where is my order", "order status", "track my order", "tracking"]
@@ -23,6 +25,14 @@ def detect_intent(message: str) -> str:
         return "refund"
     if "shipping" in text or "delivery" in text:
         return "shipping"
+    if "subscription" in text or "auto" in text or "recurring" in text:
+        return "subscription"
+    if "price" in text or "cost" in text or "how much" in text:
+        return "pricing"
+    if "side effect" in text or "safety" in text or "safe" in text:
+        return "safety"
+    if "how to use" in text or "take" in text or "dosage" in text:
+        return "usage"
     return "general"
 
 
@@ -41,7 +51,15 @@ def extract_email_and_order(text: str) -> Tuple[Optional[str], Optional[str]]:
 
 def handle_message(payload: ChatwootIncomingMessage) -> BotReply:
     user_message = payload.content.strip()
+    conversation_id = payload.conversation.id
+    account_id = payload.conversation.account_id
+    customer_email = payload.contact.email if payload.contact else None
+
     logger.info(f"Handling incoming message: {user_message}")
+
+    # Get or create conversation session
+    conv_manager = get_conversation_manager()
+    conversation = conv_manager.create_or_get(conversation_id, account_id, customer_email)
 
     intent = detect_intent(user_message)
     logger.info(f"Detected intent: {intent}")
@@ -53,7 +71,10 @@ def handle_message(payload: ChatwootIncomingMessage) -> BotReply:
     used_kb = True
     handoff = False
     handoff_reason: Optional[str] = None
-    debug_info = {"intent": intent}
+    debug_info = {
+        "intent": intent,
+        "conversation_message_count": len(conversation.messages)
+    }
 
     # Special handling for ORDER STATUS
     if intent == "order_status":
@@ -108,23 +129,54 @@ def handle_message(payload: ChatwootIncomingMessage) -> BotReply:
         used_kb = False
         extra_instructions = (
             (extra_instructions or "")
-            + "\nYou have no relevant knowledge base entries. "
+            + "\nYou have no relevant knowledge base entries for this question. "
             "Keep your answer generic and clearly offer to escalate the case "
             "to a human support agent for precise details."
         )
 
-    reply_text = generate_reply(
-        user_message=user_message,
-        context=context,
-        extra_instructions=extra_instructions,
-        debug_meta=debug_info,
+    # Add conversation history awareness
+    extra_instructions = (
+        (extra_instructions or "")
+        + f"\n\nThis is message #{len(conversation.messages) + 1} in the conversation. "
+        "Remember context from previous messages and maintain continuity."
     )
+
+    # Try OpenAI first, fallback to Hybrid KB Service
+    try:
+        reply_text = generate_reply(
+            user_message=user_message,
+            context=context,
+            extra_instructions=extra_instructions,
+            debug_meta=debug_info,
+            conversation_id=conversation_id,
+        )
+        logger.info("Successfully generated reply using OpenAI API")
+    except Exception as e:
+        logger.warning(f"OpenAI API failed ({e}), using Hybrid KB Service instead")
+        # Fallback to Hybrid Response Service - KB based answers
+        reply_text = hybrid_service.get_response(user_message, intent)
+        if context:
+            reply_text += f"\n\n[📚 Knowledge Base Match]"
+
+    # Add messages to conversation history
+    conversation.add_message("user", user_message, {"intent": intent})
+    conversation.add_message("assistant", reply_text, {"debug_info": debug_info})
 
     # Decide handoff conditions (simple rule-set)
     lower = user_message.lower()
     if any(w in lower for w in ["angry", "upset", "frustrated", "complaint", "scam"]):
         handoff = True
         handoff_reason = "Customer seems upset/frustrated; better handled by a human."
+
+    # Escalate after 5+ back-and-forth without resolution
+    if len(conversation.messages) > 10 and not handoff:
+        # If still on complex topics and many messages, suggest handoff
+        if intent in ["order_status", "refund", "shipping"] and len(conversation.messages) % 6 == 0:
+            logger.info("Escalating due to conversation length")
+            extra_instructions = (
+                "The customer has been in this conversation for a while. "
+                "If you haven't resolved the issue, offer to connect them with a specialist."
+            )
 
     return BotReply(
         content=reply_text,
@@ -134,3 +186,4 @@ def handle_message(payload: ChatwootIncomingMessage) -> BotReply:
         used_kb=used_kb,
         debug_info=debug_info,
     )
+

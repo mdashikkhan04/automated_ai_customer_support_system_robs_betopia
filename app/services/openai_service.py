@@ -41,6 +41,7 @@ def generate_reply(
     context: str,
     extra_instructions: str | None = None,
     debug_meta: Dict[str, Any] | None = None,
+    conversation_id: int | None = None,
 ) -> str:
     """
     Safe wrapper around OpenAI ChatCompletion. If the API fails,

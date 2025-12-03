@@ -5,3 +5,8 @@ python-dotenv
 pydantic
 requests
 numpy
+pydantic-settings
+beautifulsoup4
+pytest
+
+
