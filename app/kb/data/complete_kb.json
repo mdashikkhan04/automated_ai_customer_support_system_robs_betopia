@@ -99,6 +99,28 @@
     "url": null
   },
   {
+    "id": "clickbank_orders",
+    "type": "sales_channel",
+    "title": "💳 ClickBank Orders & Receipts",
+    "question": "I bought through ClickBank. How do I check my receipt or order?",
+    "content": "ClickBank orders are also supported! If you purchased through ClickBank, we can look up your order using your receipt number (format: ABC12345-1234). Email support@hardchews.shop with your ClickBank receipt number and we'll help with: Order status, refund information, product delivery, account access. ClickBank provides buyer protection on all purchases through their secure platform.",
+    "answer": "For ClickBank orders, provide your receipt number (ABC12345-1234 format) to support@hardchews.shop for tracking and support.",
+    "tags": ["clickbank", "receipt", "order", "sales", "payment"],
+    "source": "hardchews_cb",
+    "url": null
+  },
+  {
+    "id": "refund_policy_clickbank",
+    "type": "policy",
+    "title": "💰 Refund & Return Policy",
+    "question": "What's your refund policy? Can I get my money back?",
+    "content": "60-Day Money-Back Guarantee: If you're not completely satisfied with Hard Chews, we offer a full refund within 60 days of purchase. No questions asked. How to Request Refund: (1) Contact support@hardchews.shop with proof of purchase (ClickBank receipt or order number) (2) Explain reason for return (optional) (3) We process refunds within 5-7 business days. ClickBank Refunds: ClickBank handles refund processing directly. You can request through their buyer protection system. Returns ship to us at cost. Please note: Some shipping costs may be non-refundable.",
+    "answer": "60-day money-back guarantee. Email support@hardchews.shop with your receipt for full refund within 5-7 business days.",
+    "tags": ["refund", "return", "money-back", "guarantee", "policy"],
+    "source": "hardchews_me",
+    "url": null
+  },
+  {
     "id": "faq_lost_package",
     "type": "policy",
     "title": "📭 What If My Package is Lost?",
@@ -207,5 +229,27 @@
     "tags": ["contact", "support", "customer service"],
     "source": "comprehensive",
     "url": null
+  },
+  {
+    "id": "company_hardchews_me",
+    "type": "company",
+    "title": "🏢 Hard Chews Company Information",
+    "question": "Where can I find more info about Hard Chews? Support page?",
+    "content": "Hard Chews is a premium supplement brand focused on male vitality and performance. Official Website: https://www.hardchews.me | Support & Help Center: https://www.hardchews.me/hc-support | FAQ: https://www.hardchews.me/hc-support/faq | Shipping Info: https://www.hardchews.me/hc-support/shipping | Main Store: hardchews.shop. For comprehensive support, visit our help center at hardchews.me.",
+    "answer": "Visit https://www.hardchews.me for company info, support center at https://www.hardchews.me/hc-support, or shipping details at https://www.hardchews.me/hc-support/shipping",
+    "tags": ["company", "website", "support", "hardchews.me"],
+    "source": "hardchews_me",
+    "url": "https://www.hardchews.me"
+  },
+  {
+    "id": "company_shipping",
+    "type": "policy",
+    "title": "📦 Shipping Information & Policies",
+    "question": "What is your shipping policy? How long does delivery take?",
+    "content": "Shipping Details available at: https://www.hardchews.me/hc-support/shipping. We offer fast, discreet shipping on all orders. Standard shipping typically 3-5 business days. Expedited options available. All packages shipped in unmarked, discreet packaging to protect your privacy. International shipping available to select countries. For detailed shipping rates and delivery estimates, visit https://www.hardchews.me/hc-support/shipping",
+    "answer": "View shipping info at https://www.hardchews.me/hc-support/shipping. Standard delivery 3-5 business days. All orders ship discreetly.",
+    "tags": ["shipping", "delivery", "policy", "hardchews.me"],
+    "source": "hardchews_me",
+    "url": "https://www.hardchews.me/hc-support/shipping"
   }
 ]

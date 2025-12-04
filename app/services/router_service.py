@@ -9,7 +9,7 @@ from app.services.openai_service import generate_reply
 from app.services.shopify_service import shopify_service
 from app.services.clickbank_service import clickbank_service
 from app.services.conversation_manager import get_conversation_manager
-from app.services.hybrid_response_service import hybrid_service
+from app.services.priority_response_service import priority_service
 from app.logger import logger
 
 ORDER_KEYWORDS = ["where is my order", "order status", "track my order", "tracking"]
@@ -141,26 +141,35 @@ def handle_message(payload: ChatwootIncomingMessage) -> BotReply:
         "Remember context from previous messages and maintain continuity."
     )
 
-    # Try OpenAI first, fallback to Hybrid KB Service
-    try:
-        reply_text = generate_reply(
-            user_message=user_message,
-            context=context,
-            extra_instructions=extra_instructions,
-            debug_meta=debug_info,
-            conversation_id=conversation_id,
-        )
-        logger.info("Successfully generated reply using OpenAI API")
-    except Exception as e:
-        logger.warning(f"OpenAI API failed ({e}), using Hybrid KB Service instead")
-        # Fallback to Hybrid Response Service - KB based answers
-        reply_text = hybrid_service.get_response(user_message, intent)
-        if context:
-            reply_text += f"\n\n[📚 Knowledge Base Match]"
+    # Use 3-tier Priority Response System with quick_mode enabled for faster responses
+    # Tier 1: Dataset (RAG) → Tier 2: Web Scraping → Tier 3: OpenAI LLM
+    logger.info(f"🎯 Using 3-tier priority system for intent={intent}")
+    priority_result = priority_service.get_response(
+        user_message=user_message,
+        intent=intent,
+        context=context,
+        extra_instructions=extra_instructions,
+        conversation_id=conversation_id,
+        quick_mode=True  # ⚡ Enable quick mode for faster responses
+    )
+    
+    reply_text = priority_result.get("response", "")
+    response_source = priority_result.get("source", "unknown")
+    response_confidence = priority_result.get("confidence", 0.0)
+    
+    logger.info(f"✅ Response generated from: {response_source} (confidence={response_confidence:.2f})")
+    
+    # Add source info to debug metadata
+    debug_info["response_source"] = response_source
+    debug_info["response_confidence"] = response_confidence
+    if response_source == "dataset":
+        debug_info["kb_item"] = priority_result.get("kb_item_title", "Unknown")
+    elif response_source == "scraping":
+        debug_info["scraped_item"] = priority_result.get("scraped_item_title", "Unknown")
 
     # Add messages to conversation history
     conversation.add_message("user", user_message, {"intent": intent})
-    conversation.add_message("assistant", reply_text, {"debug_info": debug_info})
+    conversation.add_message("assistant", reply_text, {"debug_info": debug_info, "source": response_source})
 
     # Decide handoff conditions (simple rule-set)
     lower = user_message.lower()

@@ -42,7 +42,7 @@ class KBService:
                 continue
 
         self.items = items
-        print(f"✅ KB Service loaded {len(items)} items from knowledge base")
+        print(f"[OK] KB Service loaded {len(items)} items from knowledge base")
 
         if not items:
             self.embeddings = None
@@ -60,7 +60,7 @@ class KBService:
             # Extract embedding vectors
             vectors = [d.embedding for d in resp.data]
             self.embeddings = np.array(vectors)
-            print(f"✅ Embeddings generated for {len(items)} KB items")
+            print(f"[OK] Embeddings generated for {len(items)} KB items")
         except Exception as e:
             print(f"⚠️ Warning: Could not generate embeddings: {e}")
             print("Fallback: Using keyword search instead")
@@ -77,27 +77,64 @@ class KBService:
         parts.append(f"A: {item.answer}")
         return "\n".join(parts)
 
-    def search(self, query: str, top_k: int = 5) -> List[Tuple[KBItem, float]]:
-        """Return top_k KB items with similarity score."""
-        if not self.items or self.embeddings is None:
+    def search(self, query: str, top_k: int = 5, use_keyword_fallback: bool = True) -> List[Tuple[KBItem, float]]:
+        """
+        Return top_k KB items with similarity score.
+        Uses semantic search if embeddings available, falls back to keyword search for speed.
+        """
+        if not self.items:
+            return []
+        
+        # ⚡ FAST PATH: Try keyword search first (instant, no API call)
+        if use_keyword_fallback:
+            keyword_results = self._keyword_search(query, top_k=top_k)
+            if keyword_results:
+                return keyword_results
+        
+        # Fallback: Semantic search (if keyword found nothing and embeddings ready)
+        if self.embeddings is None:
             return []
 
-        q_resp = _openai_client.embeddings.create(
-            model="text-embedding-3-small",
-            input=[query],
-        )
-        q_vec = np.array(q_resp.data[0].embedding)
+        try:
+            q_resp = _openai_client.embeddings.create(
+                model="text-embedding-3-small",
+                input=[query],
+            )
+            q_vec = np.array(q_resp.data[0].embedding)
 
-        # cosine similarity
-        scores = self.embeddings @ q_vec / (
-            np.linalg.norm(self.embeddings, axis=1) * np.linalg.norm(q_vec) + 1e-10
-        )
-        idx_sorted = np.argsort(scores)[::-1][:top_k]
+            # cosine similarity
+            scores = self.embeddings @ q_vec / (
+                np.linalg.norm(self.embeddings, axis=1) * np.linalg.norm(q_vec) + 1e-10
+            )
+            idx_sorted = np.argsort(scores)[::-1][:top_k]
 
-        results: List[Tuple[KBItem, float]] = []
-        for idx in idx_sorted:
-            results.append((self.items[int(idx)], float(scores[int(idx)])))
-        return results
+            results: List[Tuple[KBItem, float]] = []
+            for idx in idx_sorted:
+                results.append((self.items[int(idx)], float(scores[int(idx)])))
+            return results
+        except Exception as e:
+            print(f"⚠️ Semantic search failed: {e}, using keyword search")
+            return self._keyword_search(query, top_k=top_k)
+
+    def _keyword_search(self, query: str, top_k: int = 5) -> List[Tuple[KBItem, float]]:
+        """⚡ Fast keyword-based search (no API calls, instant response)"""
+        query_words = set(query.lower().split())
+        results = []
+        
+        for item in self.items:
+            # Score based on keyword matches
+            text = f"{item.title} {item.question} {item.answer}".lower()
+            matches = sum(1 for word in query_words if word in text)
+            
+            if matches > 0:
+                # Boost score for title matches
+                title_matches = sum(1 for word in query_words if word in item.title.lower())
+                confidence = (matches + title_matches * 2) / (len(query_words) + 1)
+                results.append((item, min(confidence, 0.95)))  # Cap at 0.95
+        
+        # Sort by confidence and return top_k
+        results.sort(key=lambda x: x[1], reverse=True)
+        return results[:top_k]
 
     def build_context(self, query: str, top_k: int = 5) -> str:
         results = self.search(query, top_k=top_k)

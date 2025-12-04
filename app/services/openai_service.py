@@ -36,6 +36,23 @@ Answer in clear, simple English. Keep answers focused and helpful.
 """
 
 
+def get_embedding(text: str) -> List[float]:
+    """
+    Generate embedding vector for text using OpenAI's text-embedding-3-small model.
+    Used for Pinecone RAG indexing and retrieval.
+    """
+    try:
+        client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
+        response = client.embeddings.create(
+            input=text,
+            model="text-embedding-3-small"
+        )
+        return response.data[0].embedding
+    except Exception as e:
+        logger.error(f"Error generating embedding: {e}")
+        raise
+
+
 def generate_reply(
     user_message: str,
     context: str,
@@ -61,19 +78,17 @@ def generate_reply(
 
     try:
         logger.info("Calling OpenAI ChatCompletion")
-        completion = openai.ChatCompletion.create(
+        client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
+        completion = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=messages,
             temperature=0.4,
             max_tokens=600,
         )
-        reply = completion["choices"][0]["message"]["content"].strip()
+        reply = completion.choices[0].message.content.strip()
         return reply
     except Exception as e:
         logger.error(f"Error calling OpenAI API: {e}")
-        # graceful fallback
-        return (
-            "I'm having trouble accessing my AI services at the moment. "
-            "I’ve recorded your question and will forward it to a human support specialist "
-            "who can follow up with you as soon as possible."
-        )
+        # Do not swallow the exception here — raise so callers can decide how to
+        # handle fallbacks (e.g., router_service will use the hybrid KB fallback).
+        raise
