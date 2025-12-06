@@ -37,9 +37,27 @@ def load_scraping_data():
     with open(scraping_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     items = []
+    # Support multiple possible scraped data shapes: products/faqs/policies OR pages
     for section in ["products", "faqs", "policies"]:
         for entry in data.get(section, []):
             items.append(entry)
+
+    # The new generic scraper writes "pages" with title/headings/paragraphs
+    for page in data.get("pages", []):
+        # Create a content field combining headings and paragraphs for embedding
+        content_parts = []
+        if page.get("title"):
+            content_parts.append(page.get("title"))
+        if page.get("headings"):
+            content_parts.extend(page.get("headings"))
+        if page.get("paragraphs"):
+            content_parts.extend(page.get("paragraphs"))
+        content = "\n\n".join(content_parts)
+        items.append({
+            "title": page.get("title") or page.get("url"),
+            "content": content,
+            "source_url": page.get("url"),
+        })
     return items
 
 def upsert_to_pinecone(items, namespace="kb"):

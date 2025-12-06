@@ -33,6 +33,7 @@ class Settings(BaseSettings):
     # ClickBank
     CLICKBANK_DEV_KEY: str
     CLICKBANK_CLERK_KEY: str
+    CLICKBANK_API_KEY: str | None = None
 
     # HardChews Client Config
     WEBSITE_URL: str = "https://www.hardchews.me"

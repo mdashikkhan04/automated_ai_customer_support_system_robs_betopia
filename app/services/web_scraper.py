@@ -1,6 +1,7 @@
 # File: app/services/web_scraper.py
 
 import requests
+import os
 from bs4 import BeautifulSoup
 import json
 import time
@@ -24,7 +25,11 @@ class WebScraper:
     def _get_page(self, path: str) -> Optional[BeautifulSoup]:
         """Fetch and parse a page."""
         try:
-            url = f"{self.base_url}/{path.lstrip('/')}"
+            # Allow passing full URLs (starting with http) or relative paths
+            if path.startswith("http://") or path.startswith("https://"):
+                url = path
+            else:
+                url = f"{self.base_url}/{path.lstrip('/')}"
             logger.info(f"Scraping: {url}")
             resp = self.session.get(url, headers=self.headers, timeout=10)
             resp.raise_for_status()
@@ -170,7 +175,9 @@ class WebScraper:
             "policies": self.scrape_policy_pages(),
         }
 
-        output_file = output_file or "app/kb/data/scraped_website_data.json"
+        # Default export path used by the ingestion script
+        output_file = output_file or "app/kb/cache/scraped_data.json"
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
         try:
             with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
@@ -189,3 +196,44 @@ def scrape_hardchews_website(website_url: str = "https://hardchews.shop"):
     """
     scraper = WebScraper(base_url=website_url)
     return scraper.export_scraped_data()
+
+def scrape_urls(urls: List[str], output_file: str = None):
+    """
+    Scrape an explicit list of full URLs and export data.
+    Useful for scraping product pages, clickbank order links, and policy pages.
+    """
+    scraper = WebScraper()
+    results = {
+        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "pages": []
+    }
+
+    for url in urls:
+        try:
+            soup = scraper._get_page(url)
+            if not soup:
+                continue
+
+            title = soup.title.string.strip() if soup.title else url
+            # collect paragraphs and headings
+            paragraphs = [p.get_text(strip=True) for p in soup.find_all('p') if p.get_text(strip=True)]
+            headings = [h.get_text(strip=True) for h in soup.find_all(['h1','h2','h3','h4']) if h.get_text(strip=True)]
+
+            page = {
+                "url": url,
+                "title": title,
+                "headings": headings,
+                "paragraphs": paragraphs,
+            }
+            results["pages"].append(page)
+            time.sleep(1)
+        except Exception as e:
+            logger.warning(f"Failed scraping {url}: {e}")
+
+    output_file = output_file or "app/kb/cache/scraped_data.json"
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+
+    logger.info(f"Scraped {len(results['pages'])} pages and saved to {output_file}")
+    return results

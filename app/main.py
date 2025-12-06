@@ -9,6 +9,9 @@ from app.config import get_settings
 from app.logger import logger
 from app.services.scraping_scheduler import scraping_scheduler
 from app.services.priority_response_service import priority_service
+from fastapi.staticfiles import StaticFiles
+import os
+from fastapi.responses import FileResponse
 
 settings = get_settings()
 
@@ -17,6 +20,18 @@ app = FastAPI(
     description="AI-powered chatbot backend for HardChews customer support (3-tier priority system).",
     version="2.0.0",
 )
+
+# Mount a simple frontend under /ui (use absolute path)
+FRONTEND_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'frontend'))
+app.mount("/ui", StaticFiles(directory=FRONTEND_DIR), name="frontend")
+
+
+@app.get("/ui/index.html")
+async def ui_index():
+    file_path = os.path.join(FRONTEND_DIR, "index.html")
+    if os.path.exists(file_path):
+        return FileResponse(file_path, media_type="text/html")
+    return {"detail": "Not Found"}
 
 # Request/Response models
 class ChatRequest(BaseModel):
