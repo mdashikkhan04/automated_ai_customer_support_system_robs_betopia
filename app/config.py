@@ -22,6 +22,11 @@ class Settings(BaseSettings):
     CHATWOOT_BASE_URL: AnyHttpUrl
     CHATWOOT_API_TOKEN: str
     CHATWOOT_BOT_NAME: str = "HardChews Assistant"
+    # Backwards-compatible / alternate env names used by some scripts
+    CHATWOOT_URL: AnyHttpUrl | None = None
+    CHATWOOT_API_KEY: str | None = None
+    CHATWOOT_ACCOUNT_ID: str | None = None
+    CHATWOOT_INBOX_ID: str | None = None
 
     # Shopify
     SHOPIFY_STORE_DOMAIN: str
