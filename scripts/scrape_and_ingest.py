@@ -26,6 +26,12 @@ URLS = [
     "https://hardchews.shop/",
     "https://account.hardchews.shop/authentication/login?client_id=352b719d-fd88-448a-b26f-c8a78de36c2e&locale=en&redirect_uri=%2Fauthentication%2Foauth%2Fauthorize%3Fclient_id%3D352b719d-fd88-448a-b26f-c8a78de36c2e%26locale%3Den%26nonce%3D92cbe42f-2549-45e1-9d7e-f7ed3b1ca845%26redirect_uri%3Dhttps%253A%252F%252Faccount.hardchews.shop%252Fcallback%253Fsource%253Dcore%26region_country%3DUS%26response_type%3Dcode%26scope%3Dopenid%2Bemail%2Bcustomer-account-api%253Afull%26state%3DhWN67Cb1Kz0GSywHlFxBNISP",
     "https://www.clickbank.com/",
+    "https://www.hardchews.me/f/6dbq9s/",
+    "https://www.hardchews.me/f/wtgpxj/",
+    "https://www.hardchews.me/hc-main-163?bottles=263&f=wtgpxj&fnid=2",
+    "https://www.hardchews.me/hc-main-163?bottles=263&sub=yes&toggle=yes",
+    "https://hardchews.me/dynamic-hc-vsl-1-page-163?b=263",
+    "https://hardchews.me/hard-chews-tsl-1-sub-163",
 ]
 
 

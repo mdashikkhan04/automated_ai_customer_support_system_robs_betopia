@@ -40,4 +40,4 @@ form.addEventListener('submit', (e) => {
 });
 
 // welcome message
-appendMessage('bot', 'Welcome to HardChews Support! Ask me anything about orders, refunds, or products.');
+appendMessage('bot', 'Welcome to Hard Chews Support! Ask me anything about orders, refunds, or products.');

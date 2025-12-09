@@ -8,5 +8,5 @@ numpy
 pydantic-settings
 beautifulsoup4
 pytest
-pinecone-client
+pinecone
 
