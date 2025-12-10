@@ -1,255 +1,324 @@
 [
   {
-    "id": "faq_general_intro",
+    "id": "faq_001",
     "type": "product",
-    "title": "🤖 What is Hard Chews?",
-    "question": "What is Hard Chews? Tell me about the product.",
-    "content": "Hard Chews is a premium chewable dietary supplement formulated to support male vitality and performance. Each tablet is scientifically designed with natural ingredients including tribulus terrestris, maca root, ginseng, and zinc for maximum potency. Hard Chews provides fast-acting benefits - most users experience effects within 20-40 minutes. Perfect for active men seeking natural enhancement without prescription complications.",
-    "answer": "Hard Chews is a premium chewable dietary supplement formulated to support male vitality and performance. Each tablet is scientifically designed with natural ingredients including tribulus terrestris, maca root, ginseng, and zinc for maximum potency.",
-    "tags": ["product", "general", "what is", "introduction"],
-    "source": "comprehensive",
-    "url": null
+    "title": "Is Hard Chews natural?",
+    "question": "Is Hard Chews a natural product?",
+    "answer": "Yes. Hard Chews is made with premium, all-natural ingredients in an FDA-registered facility and goes through strict quality testing for purity and potency. It is gluten-free, non-GMO, and free from synthetic fillers. As with any supplement, customers should check with their healthcare provider to make sure it is a good fit for their individual needs.",
+    "tags": ["hard chews", "natural", "safety", "ingredients", "quality"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
   },
   {
-    "id": "faq_how_use",
-    "type": "usage",
-    "title": "📋 How to Use Hard Chews - Dosage Instructions",
-    "question": "How do I use Hard Chews? What's the dosage? How should I take it?",
-    "content": "Recommended Dosage: Take 1-2 tablets 30-60 minutes before use. Place tablet in mouth and chew thoroughly for maximum absorption. Do not exceed 2 tablets per 24-hour period. For best results, maintain consistent usage for 30 days. Each bottle contains 30 tablets (30-day supply at 1 tablet daily). Can be taken with or without food, though taking with a light meal may enhance absorption.",
-    "answer": "Take 1-2 tablets 30-60 minutes before use. Chew thoroughly for maximum absorption. Do not exceed 2 tablets per 24 hours.",
-    "tags": ["usage", "dosage", "how to take", "instructions"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_when_results",
-    "type": "results",
-    "title": "⏱️ How Long Until I See Results?",
-    "question": "How long until I see results? When will it start working?",
-    "content": "Timeline for Hard Chews Results: 20-40 minutes - Initial effects begin (most users notice timing improvement). 1-2 hours - Peak performance typically achieved. 7-14 days - Consistent users report enhanced stamina and confidence. 30 days - Optimal results with regular use. Some users experience effects on first use, while others notice progressive improvement over 2-3 weeks. Results vary based on individual metabolism, diet, exercise, and stress levels.",
-    "answer": "Most users notice effects within 20-40 minutes. Peak performance typically occurs 1-2 hours after consumption. Consistent use over 30 days provides optimal results.",
-    "tags": ["results", "timeline", "how long", "effects"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_side_effects",
-    "type": "safety",
-    "title": "⚠️ Side Effects & Safety Information",
-    "question": "What are the side effects? Is it safe? Any risks?",
-    "content": "Hard Chews is formulated with natural ingredients and generally well-tolerated. Potential side effects (rare): Mild headache, slight nausea, or digestive changes in sensitive individuals. These typically subside after first use. NOT recommended if: You have heart conditions, take nitrate medications, have blood pressure issues, or are allergic to any ingredients. Always consult your healthcare provider before use, especially if taking medications. This supplement is not FDA-regulated like pharmaceuticals.",
-    "answer": "Hard Chews uses natural ingredients and is generally safe. Rare side effects include mild headache or nausea. Consult your doctor if you have heart conditions or take medications.",
-    "tags": ["safety", "side effects", "medical", "warning"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_pregnancy_nursing",
-    "type": "safety",
-    "title": "🤰 Is it Safe During Pregnancy or While Nursing?",
-    "question": "Can I use it while pregnant or nursing? Is it safe for women?",
-    "content": "Hard Chews is formulated for adult males and is NOT recommended during pregnancy or while breastfeeding. This product has not been tested for use in pregnant women or nursing mothers. If you're pregnant, planning pregnancy, or breastfeeding, consult your OB-GYN before using any supplement. For women seeking similar benefits, we recommend consulting with your healthcare provider about alternatives.",
-    "answer": "Hard Chews is NOT recommended during pregnancy or while nursing. Consult your OB-GYN before use.",
-    "tags": ["pregnancy", "nursing", "women", "safety"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_refund_policy",
-    "type": "policy",
-    "title": "💰 Refund Policy - 60-Day Money-Back Guarantee",
-    "question": "What is your refund policy? Can I get a refund? Money-back guarantee?",
-    "content": "We offer a hassle-free 60-day money-back guarantee on all HardChews purchases. If you're not completely satisfied for any reason, contact our support team within 60 days of purchase with your order number and email. We'll process your refund within 3-5 business days. Return shipping label will be provided. No questions asked – your satisfaction is our priority.",
-    "answer": "Yes! 60-day money-back guarantee. Not satisfied? Get a full refund within 60 days, no questions asked.",
-    "tags": ["refund", "money-back", "guarantee", "returns", "policy"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_how_refund",
-    "type": "policy",
-    "title": "🔄 How to Request a Refund - Step by Step",
-    "question": "How do I request a refund? What's the refund process?",
-    "content": "Refund Process: (1) Email support@hardchews.shop with order number, email, and reason (2) We'll respond within 24 hours with return shipping label (3) Ship product back to us (4) Once received and inspected, refund processed in 3-5 business days. Refunds go to original payment method. Can also reply in this chat for immediate guidance through the process.",
-    "answer": "Email support@hardchews.shop with your order number. We'll send a return label. Ship back, and we'll refund within 3-5 business days.",
-    "tags": ["refund", "process", "return", "how to"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_shipping_time",
-    "type": "policy",
-    "title": "📦 Shipping Times & Delivery Information",
-    "question": "How long does shipping take? When will I receive my order?",
-    "content": "Shipping Timeframes: USA 🇺🇸 - 2-5 business days (standard) | Canada 🇨🇦 - 5-10 business days | International 🌍 - 7-15 business days. Orders processed within 24 hours. Free shipping on $50+ (USA). Express shipping available. You'll get tracking number via email when order ships. Most orders arrive within estimated window.",
-    "answer": "USA: 2-5 business days. Canada: 5-10 days. International: 7-15 days. Free shipping on $50+ orders.",
-    "tags": ["shipping", "delivery", "timeline", "tracking"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_track_order",
-    "type": "policy",
-    "title": "🔍 How to Track Your Order",
-    "question": "How can I track my order? Where is my package? Track my delivery.",
-    "content": "You'll receive a tracking email with carrier info (USPS/UPS/FedEx) once order ships. Click the tracking link for real-time updates. Alternatively: (1) Visit hardchews.shop → My Orders (2) Enter order number and email (3) See detailed tracking. Most arrive within estimated time. If no tracking within 24 hours, email support@hardchews.shop.",
-    "answer": "Check the tracking email with your carrier link. Or visit hardchews.shop → My Orders to track real-time.",
-    "tags": ["tracking", "order status", "delivery", "package"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "clickbank_orders",
-    "type": "sales_channel",
-    "title": "💳 ClickBank Orders & Receipts",
-    "question": "I bought through ClickBank. How do I check my receipt or order?",
-    "content": "ClickBank orders are also supported! If you purchased through ClickBank, we can look up your order using your receipt number (format: ABC12345-1234). Email support@hardchews.shop with your ClickBank receipt number and we'll help with: Order status, refund information, product delivery, account access. ClickBank provides buyer protection on all purchases through their secure platform.",
-    "answer": "For ClickBank orders, provide your receipt number (ABC12345-1234 format) to support@hardchews.shop for tracking and support.",
-    "tags": ["clickbank", "receipt", "order", "sales", "payment"],
-    "source": "hardchews_cb",
-    "url": null
-  },
-  {
-    "id": "refund_policy_clickbank",
-    "type": "policy",
-    "title": "💰 Refund & Return Policy",
-    "question": "What's your refund policy? Can I get my money back?",
-    "content": "60-Day Money-Back Guarantee: If you're not completely satisfied with Hard Chews, we offer a full refund within 60 days of purchase. No questions asked. How to Request Refund: (1) Contact support@hardchews.shop with proof of purchase (ClickBank receipt or order number) (2) Explain reason for return (optional) (3) We process refunds within 5-7 business days. ClickBank Refunds: ClickBank handles refund processing directly. You can request through their buyer protection system. Returns ship to us at cost. Please note: Some shipping costs may be non-refundable.",
-    "answer": "60-day money-back guarantee. Email support@hardchews.shop with your receipt for full refund within 5-7 business days.",
-    "tags": ["refund", "return", "money-back", "guarantee", "policy"],
-    "source": "hardchews_me",
-    "url": null
-  },
-  {
-    "id": "faq_lost_package",
-    "type": "policy",
-    "title": "📭 What If My Package is Lost?",
-    "question": "What if I don't receive my order? What if package is lost?",
-    "content": "If your package doesn't arrive within estimated time: (1) Check tracking first - may still be in transit (2) Wait 2-3 extra days (3) Check with neighbors/building (4) Email support@hardchews.shop with tracking number. We investigate with carrier. If confirmed lost, we'll reship or refund (your choice). Report within 30 days of shipping.",
-    "answer": "Contact support@hardchews.shop with your tracking number. We'll investigate and either reship or refund.",
-    "tags": ["lost", "missing", "delivery", "issue"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_pricing",
-    "type": "pricing",
-    "title": "💵 Pricing & Cost Information",
-    "question": "What's the price? How much does HardChews cost?",
-    "content": "Single Bottle (30-day supply): $29.97 USD | 3-Pack Bundle: $79.99 USD (Save $10) | 6-Pack Bundle: $149.99 USD (Save $30) | Subscribe & Save: Get 15% off auto-deliveries. All prices include free shipping on USA orders over $50. International shipping has additional fees. Secure checkout with all major credit cards, PayPal, and Apple Pay accepted.",
-    "answer": "Single bottle: $29.97. Bundle pricing available. 15% off with Subscribe & Save. Free shipping on $50+ (USA).",
-    "tags": ["pricing", "cost", "price", "payment"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_subscription",
-    "type": "subscription",
-    "title": "🔄 Subscription & Auto-Delivery Options",
-    "question": "Do you offer subscriptions? Auto-delivery? Recurring orders?",
-    "content": "Yes! Subscribe & Save Program: Save 15% on every order with auto-delivery. Choose delivery frequency: Monthly, Every 6 weeks, or Every 8 weeks. Cancel anytime - no penalties. Flexible adjustments to frequency or quantity. Subscribe at checkout or set up after first purchase. You'll never miss a dose, and you save money. Subscribers get: Priority customer support, exclusive deals, and early access to new products.",
-    "answer": "Yes! Save 15% with auto-delivery. Choose your frequency (monthly/6-8 weeks). Cancel anytime, no fees.",
-    "tags": ["subscription", "auto-delivery", "recurring", "save"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_medication_interaction",
-    "type": "safety",
-    "title": "💊 Can I Use Hard Chews With My Medications?",
-    "question": "Can I use it with medications? Drug interactions? Safe with prescriptions?",
-    "content": "IMPORTANT: If you take ANY medications, especially heart medications, blood pressure meds, or nitrates, consult your doctor FIRST. HardChews may interact with certain prescriptions. Do NOT use if you: (1) Take nitrate medications (2) Have uncontrolled blood pressure (3) Have heart/cardiac conditions (4) Are allergic to ingredients. Always discuss supplement use with your healthcare provider.",
-    "answer": "Consult your doctor FIRST if taking medications, especially for heart or blood pressure. Do not use with nitrates.",
-    "tags": ["medication", "interaction", "safety", "doctor"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_bulk_orders",
-    "type": "policy",
-    "title": "📦 Bulk Orders & Corporate Discounts",
-    "question": "Do you offer bulk discounts? Corporate or wholesale pricing?",
-    "content": "Yes! Bulk pricing available for orders of 10+ bottles. Volume Discounts: 10-25 bottles = 20% off | 25-50 bottles = 30% off | 50+ bottles = Custom pricing. Perfect for gyms, wellness centers, corporate wellness programs. Contact our B2B team: bulk@hardchews.shop for custom quotes and terms.",
-    "answer": "Yes, volume discounts available! 10+ bottles = 20% off. Email bulk@hardchews.shop for custom pricing.",
-    "tags": ["bulk", "discount", "wholesale", "corporate"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_ingredients",
+    "id": "faq_002",
     "type": "product",
-    "title": "🧪 What Are the Ingredients?",
-    "question": "What ingredients are in HardChews? What's in it?",
-    "content": "HardChews contains scientifically-formulated natural ingredients: Tribulus Terrestris (1000mg) - Supports performance and confidence | Maca Root Extract (800mg) - Enhances vitality | Panax Ginseng (500mg) - Boosts energy and stamina | L-Arginine (600mg) - Supports blood flow | Zinc Citrate (30mg) - Supports hormonal health | Plus proprietary blend of: Cordyceps, Saw Palmetto, Hawthorne Berry. NO artificial ingredients, fillers, or GMOs.",
-    "answer": "Natural ingredients: Tribulus Terrestris, Maca Root, Ginseng, L-Arginine, Zinc, and more. NO artificial additives.",
-    "tags": ["ingredients", "formula", "composition"],
-    "source": "comprehensive",
-    "url": null
+    "title": "Key ingredients and blood pressure safety",
+    "question": "What are the key ingredients in Hard Chews gummies, and are they safe to take with blood pressure medication?",
+    "answer": "Hard Chews contains a power-packed, all-natural blend including L-Arginine HCl to promote healthy blood flow, Tongkat Ali extract to support testosterone levels, Maca root extract for stamina, Ashwagandha extract to help manage stress, Horny Goat Weed extract for performance, Beet root extract for natural nitrate support, and Grape seed extract for vascular protection. The formula is designed to be blood-pressure-friendly, but customers should always consult their doctor or pharmacist before combining Hard Chews with blood pressure medication.",
+    "tags": ["hard chews", "ingredients", "blood pressure", "safety", "supplement"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
   },
   {
-    "id": "faq_allergens",
-    "type": "safety",
-    "title": "🚫 Allergens & Dietary Information",
-    "question": "Are there allergens? Gluten-free? Vegan? Dairy-free?",
-    "content": "HardChews is: ✅ Gluten-Free | ✅ Dairy-Free | ✅ Soy-Free | ✅ Non-GMO | ⚠️ Contains tree nuts (maca). If you have tree nut allergies, CONSULT your doctor. Manufactured in a facility that processes nuts. Vegetarian ingredients used, though vegan status should be verified. All manufacturing meets strict quality standards.",
-    "answer": "Gluten-free, dairy-free, soy-free. Contains tree nuts. If allergic to nuts, consult your doctor.",
-    "tags": ["allergens", "dietary", "gluten-free", "vegan"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_storage",
-    "type": "usage",
-    "title": "🏠 How to Store Hard Chews",
-    "question": "How should I store Hard Chews? Storage conditions? Shelf life?",
-    "content": "Storage Recommendations: Store in cool, dry place (60-70°F ideal). Keep away from moisture and direct sunlight. Original container maintains potency best. Shelf Life: 2 years from manufacture date when stored properly. Do NOT refrigerate. Do NOT expose to extreme heat. Check expiration date before use. Proper storage ensures maximum effectiveness and safety.",
-    "answer": "Store in cool, dry place (60-70°F). Keep away from moisture and sun. Lasts 2 years when stored properly.",
-    "tags": ["storage", "shelf life", "conditions"],
-    "source": "comprehensive",
-    "url": null
-  },
-  {
-    "id": "faq_comparison",
+    "id": "faq_003",
     "type": "product",
-    "title": "🥊 How Does Hard Chews Compare to Other Products?",
-    "question": "How is Hard Chews different? Better than competitors? Why choose HardChews?",
-    "content": "HardChews Advantage: ✅ Fast-Acting (20-40 min vs 60+ min competitors) | ✅ Delicious Chewable Format (vs pills) | ✅ More Potent Formula | ✅ Better Value ($29.97 vs competitors' $40+) | ✅ 60-Day Guarantee (not 30 days) | ✅ Natural Ingredients (no synthetics) | ✅ Trusted by 50,000+ satisfied customers | ✅ Discreet, portable format. Third-party tested and verified.",
-    "answer": "Hard Chews works faster (20-40 min), tastes great, costs less, and backed by 60-day guarantee.",
-    "tags": ["comparison", "competitor", "why choose"],
-    "source": "comprehensive",
-    "url": null
+    "title": "Hard Chews vs blue pill and dependency",
+    "question": "How does Hard Chews compare to the blue pill? Will I get headaches or risk dependency?",
+    "answer": "Hard Chews is a natural enhancement option designed to support performance without the harsh side effects of many prescription pills. It typically starts working within about 20 minutes and provides a smooth, gradual release instead of a sudden spike. Customers report that they do not experience the classic blue-pill headaches or a sense of dependency. It can be used as needed or as part of a daily routine to help restore natural vitality.",
+    "tags": ["hard chews", "blue pill", "headache", "dependency", "comparison"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
   },
   {
-    "id": "faq_contact",
+    "id": "faq_004",
+    "type": "product",
+    "title": "Blood sugar issues and circulation",
+    "question": "If I have blood sugar issues and it’s affecting my circulation, can Hard Chews still help?",
+    "answer": "Hard Chews is crafted to support healthy circulation using low-sugar gummies. Ingredients such as Beet root and Grape seed extracts help support healthy blood vessel function without causing blood sugar spikes. In user testing, a majority of participants with blood sugar concerns reported improved firmness. That said, anyone with blood sugar issues should start with the suggested dose and check with their healthcare provider before use.",
+    "tags": ["blood sugar", "circulation", "diabetes", "hard chews", "safety"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_005",
+    "type": "product",
+    "title": "Prostate health support",
+    "question": "Does Hard Chews support prostate health?",
+    "answer": "Hard Chews includes ingredients that may help support overall prostate wellness. Maca root extract may help reduce prostate enlargement associated with benign prostatic hyperplasia (BPH). Beet root extract provides antioxidant support, and Grape seed extract has been shown in research models to reduce prostate weight in BPH conditions. While these ingredients are supportive, results can vary and anyone with prostate concerns should consult their healthcare provider before using Hard Chews.",
+    "tags": ["prostate", "BPH", "men's health", "hard chews"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_006",
+    "type": "product",
+    "title": "How many bottles to order",
+    "question": "How many bottles of Hard Chews should I order?",
+    "answer": "Because of strong demand and occasional supply constraints, customers are encouraged to stock up on 6 bottles for a convenient 6-month supply. This option locks in the deepest discount and free shipping while ensuring uninterrupted access to the benefits of Hard Chews.",
+    "tags": ["order size", "bottles", "discount", "free shipping"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_007",
+    "type": "product",
+    "title": "Best way to take Hard Chews",
+    "question": "What is the best way to take Hard Chews and how many should I take?",
+    "answer": "Customers can use Hard Chews in two main ways: (1) take one gummy daily for consistent, all-day support and overall vitality, or (2) take a gummy about 30 minutes before intimacy for a targeted boost. The ideal dosage can vary by body weight, tolerance, sensitivity, and goals. It is recommended to begin with 1 gummy per day to gauge response, then gradually increase if needed. Many people find that 2–4 gummies spread throughout the day work well. Consistent daily use typically delivers the best results. Anyone with health conditions should consult their doctor before increasing the dose.",
+    "tags": ["dosage", "how to use", "timing", "daily use"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_008",
     "type": "policy",
-    "title": "📞 Contact Us & Customer Support",
-    "question": "How do I contact support? Customer service number?",
-    "content": "📧 Email: support@hardchews.shop (24/7 support) | 📞 Phone: 1-800-HARDCHEWS (1-800-427-3243) Mon-Fri 9am-6pm EST | 💬 Live Chat: Available on hardchews.shop | 📱 Text Support: Coming soon. Average response time: 1-2 hours. Our team is here to help with any questions about products, orders, or policies.",
-    "answer": "Email: support@hardchews.shop | Phone: 1-800-HARDCHEWS | Live Chat: hardchews.shop",
-    "tags": ["contact", "support", "customer service"],
-    "source": "comprehensive",
-    "url": null
+    "title": "Is this a one-time payment?",
+    "question": "Is my Hard Chews purchase a one-time payment or a subscription?",
+    "answer": "Hard Chews orders are processed as a simple one-time payment. There are no automatic subscriptions, hidden renewal fees, or surprise charges. Checkout is secure, packaging is discreet, and everything is delivered without any ongoing commitment.",
+    "tags": ["payment", "subscription", "billing", "charges"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
   },
+
+  
+
   {
-    "id": "company_hardchews_me",
-    "type": "company",
-    "title": "🏢 Hard Chews Company Information",
-    "question": "Where can I find more info about Hard Chews? Support page?",
-    "content": "Hard Chews is a premium supplement brand focused on male vitality and performance. Official Website: https://www.hardchews.me | Support & Help Center: https://www.hardchews.me/hc-support | FAQ: https://www.hardchews.me/hc-support/faq | Shipping Info: https://www.hardchews.me/hc-support/shipping | Main Store: hardchews.shop. For comprehensive support, visit our help center at hardchews.me.",
-    "answer": "Visit https://www.hardchews.me for company info, support center at https://www.hardchews.me/hc-support, or shipping details at https://www.hardchews.me/hc-support/shipping",
-    "tags": ["company", "website", "support", "hardchews.me"],
-    "source": "hardchews_me",
-    "url": "https://www.hardchews.me"
-  },
-  {
-    "id": "company_shipping",
+    "id": "policy_001",
     "type": "policy",
-    "title": "📦 Shipping Information & Policies",
-    "question": "What is your shipping policy? How long does delivery take?",
-    "content": "Shipping Details available at: https://www.hardchews.me/hc-support/shipping. We offer fast, discreet shipping on all orders. Standard shipping typically 3-5 business days. Expedited options available. All packages shipped in unmarked, discreet packaging to protect your privacy. International shipping available to select countries. For detailed shipping rates and delivery estimates, visit https://www.hardchews.me/hc-support/shipping",
-    "answer": "View shipping info at https://www.hardchews.me/hc-support/shipping. Standard delivery 3-5 business days. All orders ship discreetly.",
-    "tags": ["shipping", "delivery", "policy", "hardchews.me"],
-    "source": "hardchews_me",
-    "url": "https://www.hardchews.me/hc-support/shipping"
+    "title": "How do you ship Hard Chews?",
+    "question": "How do you ship orders and where do you ship?",
+    "answer": "Hard Chews ships to most countries around the world. The team aims to ship out orders the same day; otherwise, they are shipped the next day. Orders are shipped 7 days a week, excluding all recognized US and postal holidays. During major worldwide events, shipping times may be delayed. Once a package has shipped, the customer receives a tracking ID and a personalized tracking link to check the shipment at any time. If the wrong delivery address was entered, customers should contact support as soon as possible so the address can be corrected before delivery.",
+    "tags": ["shipping", "worldwide", "tracking", "address change"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "policy_002",
+    "type": "policy",
+    "title": "Shipping fees and delivery times",
+    "question": "What are the shipping fees and delivery times for Hard Chews?",
+    "answer": "Shipping fees and typical delivery windows are as follows:\n\n- United States: Shipping is $9.95 for 1 or 2 bottles, $9.95 for 3 bottles, and FREE for 6 bottles. Standard shipping time is approximately 5–7 working days.\n- International: Shipping is $19.95 for 1–2 bottles, $19.95 for 3 bottles, and $19.95 for 6 bottles. Standard shipping time is approximately 10–15 working days.\n\nFor any order upgrades, no additional shipping fees are charged unless otherwise described. For international orders outside the United States, shipping fees apply as listed and customers may be responsible for any customs charges assessed by their country.",
+    "tags": ["shipping", "fees", "delivery time", "US", "international"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+
+  
+
+  {
+    "id": "policy_003",
+    "type": "policy",
+    "title": "How do I get a refund?",
+    "question": "How can I request a refund for my Hard Chews order?",
+    "answer": "Refunds for Hard Chews orders are handled through ClickBank. To initiate a refund, customers should visit https://www.clkbank.com/ and contact ClickBank support via chat, phone, or email. ClickBank will guide them through the refund process and confirm eligibility under the 180-day money-back guarantee.",
+    "tags": ["refund", "clickbank", "money back", "support"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "policy_004",
+    "type": "policy",
+    "title": "Return policy and 180-day guarantee",
+    "question": "How do I return Hard Chews under the 180-day guarantee?",
+    "answer": "Customers have 180 days from the date of order to try Hard Chews and decide if it is right for them. If they wish to return the product during this period, they can do so for a no-questions-asked refund.\n\nStep 1 – Confirm you are within the 180-day refund window.\nStep 2 – Return all bottles from the order (empty, full, or partially used) to the fulfillment center within 180 days of the order date. The original packing slip should be included; if it is missing, include the ClickBank Order ID, full name, shipping address, email address, phone number, and the RMA number so the return can be processed.\nStep 3 – Once the fulfillment center receives the return and processes the information, a refund is issued minus shipping, taxes, and a 35% restocking/disposal fee. Refunds are typically credited back within about 5–10 business days, depending on the bank.\n\nReturn Address:\nHard Chews\n19655 E 35th Dr #100\nAurora, CO 80011\nUSA\n\nReturn shipping costs, original shipping fees, and any customs charges for international orders are not refunded.",
+    "tags": ["returns", "180-day guarantee", "restocking fee", "address"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+
+  
+
+  {
+    "id": "faq_009",
+    "type": "faq",
+    "title": "Using Hard Chews with Cialis or Viagra",
+    "question": "I’m on Cialis or Viagra already. Can I still take Hard Chews?",
+    "answer": "Hard Chews is an all-natural dietary supplement, not a prescription drug. Many customers do use it alongside prescribed ED medications, but because every health profile is different, it is strongly recommended that customers check with their doctor or pharmacist first to confirm there are no interactions or contraindications.",
+    "tags": ["cialis", "viagra", "drug interaction", "ED medication"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_010",
+    "type": "faq",
+    "title": "Discreet billing on credit card",
+    "question": "Will my credit card statement show something embarrassing?",
+    "answer": "No. Charges are billed discreetly and will appear as \"HARDCHEWS\" or a neutral company name. Packaging is also plain and unmarked, with no explicit references to the product on the outside, so orders remain private.",
+    "tags": ["billing", "discreet", "privacy", "credit card"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_011",
+    "type": "faq",
+    "title": "Age 72 and safety",
+    "question": "I’m 72 years old. Is Hard Chews still safe for me?",
+    "answer": "Many men in their 70s and even 80s use Hard Chews and report excellent results. Because it is produced in an FDA-registered facility and uses natural ingredients, it is generally well tolerated. However, older customers should always consult their physician before starting any new supplement, especially if they have existing health conditions or take prescription medications.",
+    "tags": ["age", "senior", "safety", "hard chews"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_012",
+    "type": "faq",
+    "title": "When to expect results",
+    "question": "How long until I notice results from Hard Chews?",
+    "answer": "Most men notice a difference within 20–40 minutes when taking Hard Chews on demand. For deeper daily benefits such as stronger morning erections, higher libido, and better energy, consistent use over 2–4 weeks typically produces the best results.",
+    "tags": ["results", "timing", "onset", "daily use"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_013",
+    "type": "faq",
+    "title": "Lost or stolen package",
+    "question": "What if my package gets lost or stolen?",
+    "answer": "Every Hard Chews order includes tracking, and customers can also purchase additional shipping protection. If a package is lost or stolen, customers should contact support with their order number. The team will investigate and, when covered, reship the order free of charge.",
+    "tags": ["shipping", "lost package", "stolen", "tracking"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_014",
+    "type": "faq",
+    "title": "Can my partner tell I’m taking Hard Chews?",
+    "question": "Can my wife or girlfriend tell that I’m taking something?",
+    "answer": "Hard Chews has no unusual taste or smell and does not create obvious side effects like blue vision or sudden flushing that some prescription pills cause. Most partners simply notice that their significant other feels more energetic and naturally in the mood, rather than suspecting a supplement.",
+    "tags": ["discreet", "partner", "side effects"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_015",
+    "type": "faq",
+    "title": "Diabetic and sugar content",
+    "question": "I’m diabetic. Is Hard Chews low-sugar enough for me?",
+    "answer": "Yes. Each gummy contains less than 1 gram of sugar and uses natural sweeteners. In user testing, most men with blood sugar concerns reported no spikes and improved performance. Diabetic customers should still monitor their levels and review the product with their healthcare provider.",
+    "tags": ["diabetes", "sugar", "nutrition", "safety"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_016",
+    "type": "faq",
+    "title": "International shipping to Canada, UK, and Australia",
+    "question": "Do you ship Hard Chews to Canada, the UK, or Australia?",
+    "answer": "Yes. Hard Chews ships worldwide, including Canada, the United Kingdom, and Australia. Delivery to Canada usually takes around 7–14 business days, and delivery to the UK or Australia is typically 10–21 business days. Any customs fees, if charged, are the customer’s responsibility, although they are uncommon for this type of supplement.",
+    "tags": ["shipping", "canada", "uk", "australia", "international"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_017",
+    "type": "faq",
+    "title": "Money-back guarantee if it doesn’t work",
+    "question": "What if Hard Chews doesn’t work for me? Can I get my money back?",
+    "answer": "Yes. Hard Chews comes with a no-questions-asked 180-day money-back guarantee. Even if all the gummies have been used, customers can return the empty bottles within 180 days of purchase to receive a full refund minus shipping, in line with the return policy.",
+    "tags": ["refund", "guarantee", "money back", "180 days"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_018",
+    "type": "faq",
+    "title": "Will I stay hard for hours?",
+    "question": "Will Hard Chews make me stay hard for hours like the blue pill?",
+    "answer": "Hard Chews works differently from many prescription pills. It supports natural blood flow and stamina without forcing an erection. Men typically become firm when aroused and return to normal afterward, avoiding awkward situations where an erection lasts for hours. Most users report 60–90 minutes of enhanced performance without feeling \"stuck on.\"",
+    "tags": ["blue pill", "erection duration", "performance"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+
+  
+
+  {
+    "id": "faq_019",
+    "type": "faq",
+    "title": "Upgrading an order after purchase",
+    "question": "I just placed my order. Can I add more bottles or upgrade to a bigger deal?",
+    "answer": "Yes. Customers who just placed an order and want to add more bottles or upgrade to the 6-bottle deal can reply with their order number and the desired change. Support can usually adjust the order and send a secure payment link or issue a refund for any overpayment, typically within 24–48 hours of purchase.",
+    "tags": ["order change", "upgrade", "bottles", "post purchase"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_020",
+    "type": "faq",
+    "title": "Exact shipping time",
+    "question": "When exactly will my order ship? I need it fast.",
+    "answer": "Orders placed before 2 PM Eastern Time generally ship the same day. Orders placed after that ship the next business day. Customers receive a tracking number within about 24 hours; it may appear in the spam or promotions folder. US orders usually arrive within 3–7 business days, while international orders typically take 7–21 business days.",
+    "tags": ["shipping time", "tracking", "US", "international"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_021",
+    "type": "faq",
+    "title": "Wrong shipping address",
+    "question": "I entered the wrong shipping address. What should I do?",
+    "answer": "If a customer enters the wrong shipping address, they should contact support right away with their order number and the correct address. If the order has not shipped yet, the address can be updated immediately. If the order has already shipped, support can assist in intercepting the package or arranging a reshipment once it is returned.",
+    "tags": ["address", "shipping", "order issue", "correction"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_022",
+    "type": "faq",
+    "title": "Missing tracking number",
+    "question": "I haven’t received my tracking number yet. What should I do?",
+    "answer": "Tracking emails can sometimes land in spam or promotions folders. Customers should search their inbox for \"Hard Chews\". If more than 48 hours have passed and they still do not see a tracking email, they should contact support with their order number so the tracking information can be resent.",
+    "tags": ["tracking", "email", "spam", "shipping"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_023",
+    "type": "faq",
+    "title": "Canceling an order",
+    "question": "How do I cancel my order if I changed my mind?",
+    "answer": "If the order has not shipped yet, support can cancel it and issue a full refund immediately. If the order has already shipped, the customer can refuse delivery or return the unopened package within 180 days to receive a refund under the guarantee.",
+    "tags": ["cancel order", "refund", "shipping", "guarantee"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_024",
+    "type": "faq",
+    "title": "Taste or bottle differences",
+    "question": "The gummies taste different than I expected or one bottle looks different. Is that normal?",
+    "answer": "From time to time Hard Chews may switch flavors or slightly improve the formula, while keeping the active ingredients and dosages the same. All batches are lab-tested and safe. If anything seems off, customers are encouraged to send a photo to support, and a replacement bottle can be arranged when appropriate.",
+    "tags": ["taste", "bottle", "quality", "formula"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_025",
+    "type": "faq",
+    "title": "Using Hard Chews with nitrate medication",
+    "question": "Can I take Hard Chews with nitrate medication such as nitroglycerin?",
+    "answer": "No. Because Hard Chews contains natural nitrate sources such as beet root and other blood-flow enhancers, it should not be combined with prescription nitrate medications like nitroglycerin. Customers who are on nitrate therapy should consult their cardiologist or prescribing doctor before using Hard Chews.",
+    "tags": ["nitrates", "nitroglycerin", "safety", "contraindication"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_026",
+    "type": "faq",
+    "title": "Not feeling results yet",
+    "question": "I’ve been taking Hard Chews for a week and don’t feel anything yet. What should I do?",
+    "answer": "While many men feel the on-demand effect within 20–40 minutes, the full daily benefits usually peak after 2–4 weeks of consistent use. Customers who do not yet feel results are encouraged to try taking 2 gummies about 30–45 minutes before intimacy and to stay well-hydrated. If they still do not feel an effect after 30 days, they can take advantage of the 180-day guarantee and request a refund by returning the bottles.",
+    "tags": ["results", "timeline", "no effect", "guarantee"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
+  },
+  {
+    "id": "faq_027",
+    "type": "faq",
+    "title": "How to return under the guarantee",
+    "question": "How do I return my order for the money-back guarantee?",
+    "answer": "To return Hard Chews under the guarantee, customers should contact ClickBank at www.clkbank.com with their order number and request a \"180-day refund.\" ClickBank will provide the return address for the US warehouse and instructions. The customer ships the bottles back within 180 days of the purchase date. Once the warehouse receives the return, a refund is processed minus any original shipping cost and the restocking/disposal fee. Most customers receive their money back within a few business days.",
+    "tags": ["return process", "clickbank", "180-day refund", "money back"],
+    "source": "support_doc",
+    "url": "https://www.hardchews.me/support"
   }
 ]

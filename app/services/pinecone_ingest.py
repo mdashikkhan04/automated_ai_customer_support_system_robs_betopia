@@ -1,5 +1,9 @@
 """
-Push KB & scraping data to Pinecone index
+Push latest KB & scraping data to Pinecone index.
+
+Usage (from project root, venv active):
+    $env:PYTHONPATH="."
+    python .\app\services\pinecone_ingest.py
 """
 import os
 import sys
@@ -7,68 +11,90 @@ import json
 from dotenv import load_dotenv
 
 # Fix Python path for direct script execution
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, ROOT_DIR)
 
-# Load .env FIRST before importing services that need it
 load_dotenv()
 
 from app.services.pinecone_client import pinecone_index
 from app.services.openai_service import get_embedding
 
-KB_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kb", "data")
+KB_DATA_DIR = os.path.join(ROOT_DIR, "app", "kb", "data")
+KB_FILE = os.path.join(KB_DATA_DIR, "complete_kb.json")
+SCRAPING_CACHE = os.path.join(ROOT_DIR, "app", "kb", "cache", "scraped_data.json")
 
-# Helper: Load all KB & scraping data
 
 def load_all_kb_items():
-    items = []
-    for filename in ["complete_kb.json", "faqs_comprehensive.json", "products_comprehensive.json", "faqs.json", "products.json"]:
-        path = os.path.join(KB_DATA_DIR, filename)
-        if not os.path.exists(path):
-            continue
-        with open(path, "r", encoding="utf-8") as f:
+    """Load KB items from the new consolidated complete_kb.json only."""
+    if not os.path.exists(KB_FILE):
+        print(f"⚠️ KB file not found: {KB_FILE}")
+        return []
+
+    try:
+        with open(KB_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
-            items.extend(data)
-    return items
+        print(f"[OK] Loaded {len(data)} KB items from complete_kb.json")
+        return data
+    except Exception as e:
+        print(f"⚠️ Failed to load KB file: {e}")
+        return []
+
 
 def load_scraping_data():
-    scraping_path = os.path.join(os.path.dirname(KB_DATA_DIR), "cache", "scraped_data.json")
-    if not os.path.exists(scraping_path):
+    """Load scraped pages (products/FAQ/policies/pages) from cache."""
+    if not os.path.exists(SCRAPING_CACHE):
+        print(f"ℹ️ No scraping cache found at {SCRAPING_CACHE}")
         return []
-    with open(scraping_path, "r", encoding="utf-8") as f:
+
+    with open(SCRAPING_CACHE, "r", encoding="utf-8") as f:
         data = json.load(f)
+
     items = []
-    # Support multiple possible scraped data shapes: products/faqs/policies OR pages
+
+    # Old structured format
     for section in ["products", "faqs", "policies"]:
         for entry in data.get(section, []):
             items.append(entry)
 
-    # The new generic scraper writes "pages" with title/headings/paragraphs
+    # New generic "pages" format
     for page in data.get("pages", []):
-        # Create a content field combining headings and paragraphs for embedding
         content_parts = []
         if page.get("title"):
-            content_parts.append(page.get("title"))
+            content_parts.append(page["title"])
         if page.get("headings"):
-            content_parts.extend(page.get("headings"))
+            content_parts.extend(page["headings"])
         if page.get("paragraphs"):
-            content_parts.extend(page.get("paragraphs"))
+            content_parts.extend(page["paragraphs"])
+
         content = "\n\n".join(content_parts)
-        items.append({
-            "title": page.get("title") or page.get("url"),
-            "content": content,
-            "source_url": page.get("url"),
-        })
+        items.append(
+            {
+                "title": page.get("title") or page.get("url"),
+                "content": content,
+                "source_url": page.get("url"),
+            }
+        )
+
+    print(f"[OK] Loaded {len(items)} scraping items from cache")
     return items
 
+
 def upsert_to_pinecone(items, namespace="kb"):
+    """Upsert list of items into Pinecone under a given namespace."""
     batch = []
     for i, item in enumerate(items):
-        text = item.get("content") or item.get("answer") or item.get("title") or ""
+        text = (
+            item.get("content")
+            or item.get("answer")
+            or item.get("title")
+            or ""
+        )
         if not text:
             continue
+
         emb = get_embedding(text)
-        # Filter metadata: only allow strings, numbers, booleans, and lists of strings
-        # Skip complex objects, null values, and nested dicts/lists
+
+        # Clean metadata
         meta = {}
         for k, v in item.items():
             if k == "embedding" or v is None:
@@ -76,25 +102,47 @@ def upsert_to_pinecone(items, namespace="kb"):
             if isinstance(v, (str, int, float, bool)):
                 meta[k] = v
             elif isinstance(v, list) and all(isinstance(x, str) for x in v):
-                # Convert list of strings to comma-separated string for metadata
                 meta[k] = ",".join(v)
+
         batch.append((f"{namespace}-{i}", emb, meta))
+
         if len(batch) == 100:
             pinecone_index.upsert(batch, namespace=namespace)
             batch = []
+
     if batch:
         pinecone_index.upsert(batch, namespace=namespace)
 
+
+def clear_namespace(namespace: str):
+    """Delete all vectors in a namespace (fresh start)."""
+    print(f"🔁 Clearing namespace '{namespace}' ...")
+    pinecone_index.delete(namespace=namespace, delete_all=True)
+    print(f"[OK] Namespace '{namespace}' cleared")
+
+
 if __name__ == "__main__":
-    print("Loading KB items...")
+    print("=== Pinecone ingestion (Hard Chews) ===")
+
     kb_items = load_all_kb_items()
-    print(f"Loaded {len(kb_items)} KB items")
-    print("Loading scraping data...")
     scraping_items = load_scraping_data()
-    print(f"Loaded {len(scraping_items)} scraping items")
-    print("Upserting KB to Pinecone...")
-    upsert_to_pinecone(kb_items, namespace="kb")
-    print("Upserting scraping data to Pinecone...")
-    upsert_to_pinecone(scraping_items, namespace="scraping")
-    print("[SUCCESS] Pinecone upsert complete!")
-    print(f"Indexed {len(kb_items)} KB items + {len(scraping_items)} scraping items")
+
+    # 1) fresh clean
+    clear_namespace("kb")
+    clear_namespace("scraping")
+
+    # 2) upsert KB
+    if kb_items:
+        print(f"Upserting {len(kb_items)} KB items to namespace 'kb'...")
+        upsert_to_pinecone(kb_items, namespace="kb")
+    else:
+        print("⚠️ No KB items to upsert")
+
+    # 3) upsert scraping
+    if scraping_items:
+        print(f"Upserting {len(scraping_items)} scraping items to namespace 'scraping'...")
+        upsert_to_pinecone(scraping_items, namespace="scraping")
+    else:
+        print("ℹ️ No scraping items to upsert")
+
+    print("[SUCCESS] Pinecone upsert complete.")
