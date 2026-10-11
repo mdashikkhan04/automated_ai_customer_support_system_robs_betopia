@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Test Script - Hybrid Response System
-যাচাই করুন যে বিভিন্ন প্রশ্নে বিভিন্ন উত্তর আসছে
 """
 
 import sys
@@ -15,7 +14,6 @@ from app.services.kb_service import kb_service
 from app.logger import logger
 
 def test_hybrid_responses():
-    """বিভিন্ন intent এবং প্রশ্নে response টেস্ট করুন"""
     
     test_cases = [
         ("What is HardChews?", "general"),
